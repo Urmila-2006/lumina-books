@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+}
+
+:root {
+  --bg: #FFFBF5; /* Warm paper background */
+  --ink: #2D2424;
+  --accent-primary: #FF6B6B;
+  --accent-secondary: #4ECDC4;
+  --accent-tertiary: #FFE66D;
+  --line: #E5D9C9;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 2px solid var(--line);
+  box-shadow: 8px 8px 0px rgba(229, 217, 201, 0.5);
+  border-radius: 24px;
+}
+
+.sidebar-active {
+  background: var(--accent-primary);
+  color: white;
+  box-shadow: 4px 4px 0px #C44D4D;
+}
+
+.data-table-row {
+  transition: all 0.2s ease;
+}
+
+.data-table-row:hover {
+  background-color: #FDF1E6;
+  transform: scale(1.005);
+}
+
+.book-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-pop-in {
+  animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.genre-tag {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.genre-fiction { background: #FFD3B6; color: #D46A6A; }
+.genre-non-fiction { background: #DCEDC1; color: #6A8D73; }
+.genre-sci-fi { background: #A8E6CF; color: #4B8B7F; }
+.genre-mystery { background: #D1D1D1; color: #4A4A4A; }
+.genre-biography { background: #FF8B94; color: #A04040; }
+.genre-children { background: #FFE66D; color: #9A8400; }
+.genre-history { background: #C5CBE3; color: #4056A1; }
